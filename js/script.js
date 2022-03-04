@@ -4,7 +4,7 @@ const kmDaPercorrere = parseInt(prompt('Quanti chilometri devi percorrere?'));
 
 console.log('Deve percorrere:', kmDaPercorrere, 'km');
 
-
+document.getElementById('km-da-percorrere').innerHTML = 'Km da percorrere:' + " " + kmDaPercorrere;
 
 // età del passeggero
 
@@ -12,7 +12,7 @@ const etàUser = parseInt(prompt('Quanti anni hai?'));
 
 console.log('Il passeggero ha', etàUser, 'anni');
 
-
+document.getElementById('età').innerHTML = 'Anni:' + " " + etàUser;
 
 //prezzo del biglietto intero
 
@@ -36,9 +36,12 @@ const prezzoBigliettoOver65 = (prezzoBigliettoInt - scontoBigliettoOver65).toFix
 
 
 if (etàUser < 18) {
-    console.log('il biglietto costa:', prezzoBigliettoUnder18+ '€');
-} else if (etàUser >= 65) {
+    console.log('il biglietto costa:', prezzoBigliettoUnder18 + '€');
+    document.getElementById('prezzo-biglietto').innerHTML = 'Prezzo biglietto:' + " " + prezzoBigliettoUnder18 + '€';
+} else if (etàUser > 65) {
     console.log('il biglietto costa:', prezzoBigliettoOver65 + '€');
+    document.getElementById('prezzo-biglietto').innerHTML = 'Prezzo biglietto:' + " " + prezzoBigliettoOver65 + '€';
 } else {
     console.log('il biglietto costa:', prezzoBigliettoInt + '€');
+    document.getElementById('prezzo-biglietto').innerHTML = 'Prezzo biglietto:' + " " + prezzoBigliettoInt + '€';
 }
