@@ -1,6 +1,3 @@
-console.log('Hello world')
-
-
 // Kilometraggio
 
 const kmDaPercorrere = parseInt(prompt('Quanti chilometri devi percorrere?'));
@@ -16,11 +13,10 @@ const etàUser = parseInt(prompt('Quanti anni hai?'));
 console.log('Il passeggero ha', etàUser, 'anni');
 
 
+
 //prezzo del biglietto intero
 
-const prezzoBigliettoInt = kmDaPercorrere * 0.21
-
-console.log('il biglietto costa:', prezzoBigliettoInt + '€');
+const prezzoBigliettoInt = (kmDaPercorrere * 0.21).toFixed(2);
 
 
 
@@ -28,9 +24,7 @@ console.log('il biglietto costa:', prezzoBigliettoInt + '€');
 
 const scontoBigliettoUnder18 = (prezzoBigliettoInt * 20) / 100;
 
-const prezzoBigliettoUnder18 = prezzoBigliettoInt - scontoBigliettoUnder18;
-
-console.log('Per le persone sotto i 18 anni, il biglietto costa:', prezzoBigliettoUnder18 + '€');
+const prezzoBigliettoUnder18 = (prezzoBigliettoInt - scontoBigliettoUnder18).toFixed(2);
 
 
 
@@ -38,6 +32,13 @@ console.log('Per le persone sotto i 18 anni, il biglietto costa:', prezzoBigliet
 
 const scontoBigliettoOver65 = (prezzoBigliettoInt * 40) / 100;
 
-const prezzoBigliettoOver65 = prezzoBigliettoInt - scontoBigliettoOver65;
+const prezzoBigliettoOver65 = (prezzoBigliettoInt - scontoBigliettoOver65).toFixed(2);
 
-console.log('Per le persone sopra i 65 anni, il biglietto costa:', prezzoBigliettoOver65 + '€')
+
+if (etàUser < 18) {
+    console.log('il biglietto costa:', prezzoBigliettoUnder18+ '€');
+} else if (etàUser >= 65) {
+    console.log('il biglietto costa:', prezzoBigliettoOver65 + '€');
+} else {
+    console.log('il biglietto costa:', prezzoBigliettoInt + '€');
+}
