@@ -30,5 +30,14 @@ const scontoBigliettoUnder18 = (prezzoBigliettoInt * 20) / 100;
 
 const prezzoBigliettoUnder18 = prezzoBigliettoInt - scontoBigliettoUnder18;
 
-console.log('Il prezzo del biglietto under18 è:',prezzoBigliettoUnder18 +'€')
+console.log('Per le persone sotto i 18 anni, il biglietto costa:', prezzoBigliettoUnder18 + '€');
 
+
+
+// prezzo del biglietto per gli over65
+
+const scontoBigliettoOver65 = (prezzoBigliettoInt * 40) / 100;
+
+const prezzoBigliettoOver65 = prezzoBigliettoInt - scontoBigliettoOver65;
+
+console.log('Per le persone sopra i 65 anni, il biglietto costa:', prezzoBigliettoOver65 + '€')
